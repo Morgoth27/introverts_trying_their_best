@@ -1,4 +1,4 @@
-const { User, Thought } = require('../models');
+const { User, Thought, Follower } = require('../models');
 // const { Types } = require('mongoose');
 
 module.exports = {
