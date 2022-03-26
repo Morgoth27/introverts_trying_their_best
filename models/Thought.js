@@ -1,5 +1,9 @@
 const { Schema, Types, model } = require('mongoose');
 
+const dateFormat = (date) => {
+    return date.toLocaleString()
+};
+
 const reactionsSchema = new Schema(
     {
         reactionId: {
@@ -45,7 +49,7 @@ const thoughtsSchema = new Schema({
             type: String, 
             required: true 
     },
-    reactions: [ reactionsSchema ],
+    reactions: [reactionsSchema],
    },
    {
     toJSON: {
