@@ -9,5 +9,6 @@ const {
 }  = require('../../controllers/followerController')
 
 router.route('/').get(getAllUsers);
-router.route('/:followerId').post(addFollower).delete(deleteFollower)
+router.route('/:userId/followers/:followerId').post(addFollower).delete(deleteFollower)
+
 module.exports = router;
