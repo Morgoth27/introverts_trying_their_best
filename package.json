@@ -1,6 +1,28 @@
 {
   "dependencies": {
     "express": "^4.17.3",
-    "mongoose": "^6.2.8"
-  }
+    "mongoose": "^6.2.8",
+    "sequelize": "^6.17.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "introverts_trying_their_best",
+  "description": "An API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Morgoth27/introverts_trying_their_best.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Morgoth27/introverts_trying_their_best/issues"
+  },
+  "homepage": "https://github.com/Morgoth27/introverts_trying_their_best#readme"
 }
