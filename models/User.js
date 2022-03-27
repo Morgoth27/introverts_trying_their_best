@@ -1,5 +1,8 @@
 // Define Mongoose
-const { Schema, model } = require('mongoose');
+const { Schema, Types, model } = require('mongoose');
+// import { isEmail } from 'validator';
+
+const validator = require('validator'); 
 
 const userSchema = new Schema({
         username: { 
@@ -12,12 +15,7 @@ const userSchema = new Schema({
                 type: String, 
                 unique: true, 
                 required: true,
-                validate: {   
-                    validator: function (valid) {
-                      return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(valid);
-                    },
-                    message: 'Email invalid. Provide a valid email.'
-                }
+                validate: [ validator.isEmail, 'Email is invalid.' ]
         },
         thoughts: [
                 {
