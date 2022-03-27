@@ -4,7 +4,8 @@ const { Schema, Types, model } = require('mongoose');
 
 const validator = require('validator'); 
 
-const userSchema = new Schema({
+const userSchema = new Schema(
+        {
         username: {                 
                 type: String, 
                 unique: true,  
@@ -16,6 +17,7 @@ const userSchema = new Schema({
                 type: String, 
                 unique: true, 
                 required: true,
+                trim: true,
                 validate: [ validator.isEmail, 'Email is invalid.' ]
         },
         thoughts: [
@@ -30,7 +32,7 @@ const userSchema = new Schema({
                         ref: 'User',
                 },
         ]
-},
+        },
         {
         toJSON: {
           virtuals: true,
@@ -44,5 +46,6 @@ userSchema.virtual('followersCount').get(function () {
 
 const User = model('User', userSchema);
 
+const handleError = (err) => console.error(err);
 
 module.exports = User;
