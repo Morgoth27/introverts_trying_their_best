@@ -9,6 +9,15 @@ const router = require('express').Router();
 
 // router.delete('/thoughts/:thoughtId')
 
-const {}
+const {
+    getAllThoughts,
+    getThoughtById,
+    createThought,
+    deleteThought,
+    updateThought
+}  = require('../../controllers/thoughtsController')
+
+router.route('/').get(getAllThoughts).post(createThought);
+router.route('/:thoughtId').get(getThoughtById).put(updateThought).delete(deleteThought)
 
 module.exports = router;
