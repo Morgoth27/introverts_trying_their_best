@@ -3,7 +3,7 @@ const { User, Thought, Follower } = require('../models');
 module.exports = {
 
 addFollower(req, res) {
-    User.findOneAndUpdate(
+    User.findByIdAndUpdate(
     { _id: req.params.userId },
     { $addToSet: {
         followers: req.params.followerId
@@ -25,7 +25,7 @@ addFollower(req, res) {
 },
 
   deleteFollower(req, res) {
-    User.findOneAndUpdate(
+    User.findByIdAndUpdate(
     { _id: req.params.userId },
     { $pull: {
         followers: req.params.followerId
@@ -36,7 +36,7 @@ addFollower(req, res) {
     .then((user) =>
         !user
         ? res.status(404).json({ message: 'No such user exists.' })
-        : res.json(user)
+        : res.json({ message: 'Removed follower.' })
     )
     .catch((err) => {
         console.log(err);

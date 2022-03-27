@@ -36,7 +36,7 @@ const reactionsSchema = new Schema(
 const thoughtsSchema = new Schema({
     thoughtMsg: { 
             type: String, 
-            required: true ,
+            required: true,
             minlength: [1, "No thought entered. Enter a thought!"],
             maxlength: [300, "Try being a little more succinct -- max 300 characters."],
     },

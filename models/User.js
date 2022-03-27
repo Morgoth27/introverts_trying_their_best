@@ -5,12 +5,13 @@ const { Schema, Types, model } = require('mongoose');
 const validator = require('validator'); 
 
 const userSchema = new Schema({
-        username: { 
+        username: {                 
                 type: String, 
                 unique: true,  
                 required: true,
                 trim: true,
-        },
+                max_length: 14
+                },
         email: { 
                 type: String, 
                 unique: true, 

@@ -11,9 +11,7 @@ module.exports = {
             res.status(500).json(err));
       },
     getThoughtById(req, res) {
-        Thought.findOne({
-            _id: req.params.thoughtId
-        })
+        Thought.findById(req.params.thoughtId)
           .select('-__v')
           .then((thought) =>
             !thought
@@ -36,7 +34,6 @@ module.exports = {
               { new: true }
           );
           })
-
           .then((user) =>
             !user
               ? res.status(404).json({
@@ -51,7 +48,7 @@ module.exports = {
       },
 
     deleteThought(req, res) {
-        Thought.findOneAndDelete({
+        Thought.findByIdAndDelete({
             _id: req.params.thoughtId
         })
           .then((thought) =>
@@ -75,7 +72,7 @@ module.exports = {
       },
 
     updateThought(req, res) {
-        Thought.findOneAndUpdate(
+        Thought.findByIdAndUpdate(
           { _id: req.params.thoughtId },
           { $set: req.body },
           { runValidators: true,
