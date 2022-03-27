@@ -1,4 +1,4 @@
-const { User, Thought, Follower } = require('../models');
+const { User, Thought } = require('../models');
 
 module.exports = {
 
@@ -11,9 +11,7 @@ module.exports = {
               });
     },    
     getUserById(req, res) {
-        User.findOne({
-            _id: req.params.userId
-        })
+        User.findById(req.params.userId)
           .select('-__v')
           .populate('thoughts')
           .then((user) =>
@@ -37,7 +35,7 @@ module.exports = {
           });
     },
     updateUser(req, res) {
-        User.findOneAndUpdate(
+        User.findByIdAndUpdate(
           { _id: req.params.userId },
           { $set: req.body },
           { runValidators: true,
@@ -55,9 +53,7 @@ module.exports = {
           });
     },
     deleteUser(req, res) {
-        User.findOneAndDelete({
-            _id: req.params.userId
-        })
+        User.findByIdAndDelete(req.params.userId)
           .then((user) =>
             !user
               ? res.status(404).json({
