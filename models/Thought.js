@@ -10,10 +10,11 @@ const reactionsSchema = new Schema(
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId(),
         },
-        reactionText: {
+        reactionBody: {
             type: String,
             required: true,
-            maxlength: 280,
+            minlength: 1,
+            maxlength: [280, "Too long."],
         },
         username: {
             type: String,
@@ -21,7 +22,7 @@ const reactionsSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now,
+            default: Date.now(),
             get: dateFormat,
         },
     },
@@ -42,7 +43,7 @@ const thoughtsSchema = new Schema({
     },
     createdAt: { 
             type: Date, 
-            default: Date.now,
+            default: Date.now(),
             get: dateFormat,
     },
     username:  { 
@@ -53,11 +54,10 @@ const thoughtsSchema = new Schema({
    },
    {
     toJSON: {
+        virtuals: true,
         getters: true,
     },
-    id: false,
-  }       
-   );
+  });
     
    thoughtsSchema.virtual('reactionsCount').get(function () {
     return this.reactions.length;
@@ -65,5 +65,6 @@ const thoughtsSchema = new Schema({
     
    const Thought = model('Thought', thoughtsSchema);
 
-    
+   const handleError = (err) => console.error(err);
+
    module.exports = Thought;
