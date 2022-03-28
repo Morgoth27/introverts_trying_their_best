@@ -25,7 +25,7 @@ addFollower(req, res) {
 },
 
   deleteFollower(req, res) {
-    User.findByIdAndUpdate(
+    User.findByIdAndDelete(
     { _id: req.params.userId },
     { $pull: {
         followers: req.params.followerId

@@ -14,12 +14,12 @@ const thoughtData =
         ]
     },
     {
-        thoughtMsg: "Korin",
-        username: "Starving!"
+        thoughtMsg: "Starving!",
+        username: "Korin"
     },
     {
-        thoughtMsg: "Morgoth",
-        username: "Mom closed the bathroom door. Currently sobbing."
+        thoughtMsg: "Mom closed the bathroom door. Currently sobbing.",
+        username: "Morgoth"
     },
     {
         thoughtMsg: "treats??/",
@@ -36,8 +36,8 @@ const thoughtData =
         ]
     },
     {
-        thoughtMsg: "Morgoth",
-        username: "i cant do this. wheres mom",
+        thoughtMsg: "i cant do this. wheres mom",
+        username: "Morgoth",
     reactions: [
             {
                 reactionText: "Meet me at the cat tree, we can cuddle till she gets back.",
@@ -46,8 +46,8 @@ const thoughtData =
         ]
     },
     {
-        thoughtMsg: "Ganon",
-        username: "Feeling possessive rn. Dont even LOOK at my toys or you'll catch these paws"
+        thoughtMsg: "Feeling possessive rn. Dont even LOOK at my food",
+        username: "Ganon"
     }
 ]   
 }

@@ -1,19 +1,15 @@
 const connection = require('../config/connection');
-const seedUsers = require('./userSeed')
-const seedThoughts = require('./thoughtSeed');
+const { thoughts, users } = require('./seedData.json')
+const { Thought, User } = require('../models')
 
-const seedDatabase = async () => {
+connection.once('open', async () => {
 
+  await User.deleteMany({});
 
-  await connection.sync({ force: true });
+  await Thought.deleteMany({});
 
+  await User.collection.insertMany(users);
 
-  await seedThoughts();
-  await seedUsers();
+  await Thought.collection.insertMany(thoughts);
 
-  console.log("Seeding completed! 🌱")
-
-  process.exit(0);
-};
-
-seedDatabase();
+})
