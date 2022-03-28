@@ -30,6 +30,7 @@ const reactionsSchema = new Schema(
         toJSON: {
             getters: true,
         },
+        id: false,
     }   
 );
 
