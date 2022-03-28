@@ -1,5 +1,5 @@
     {
-        "users": [
+        "users" : [
         {
             "username": "Morgoth",
             "email": "DarkLord27@catsmeow.com"
@@ -18,7 +18,7 @@
         }
         ],
     
-        "thoughts": [
+        "thoughts" : [
             {
                 "thoughtMsg": "I really hope mom gets the squirmle toy out today.",
                 "username": "Ganon",

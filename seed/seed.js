@@ -12,4 +12,6 @@ connection.once('open', async () => {
 
   await Thought.collection.insertMany(thoughts);
 
+  console.log("Database has been seeded.")
+
 })
