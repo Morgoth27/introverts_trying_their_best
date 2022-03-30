@@ -13,10 +13,11 @@ const {
     getThoughtById,
     createThought,
     deleteThought,
-    updateThought
+    updateThought,
+    getAllThoughts,
 }  = require('../../controllers/thoughtsController')
 
-router.route('/').post(createThought)
+router.route('/').post(createThought).get(getAllThoughts)
 
 router.route('/:thoughtId').get(getThoughtById).put(updateThought).delete(deleteThought);
 
