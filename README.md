@@ -75,7 +75,7 @@ N/A
 ## Video of application in use:
 -------------------------------
 
-[![Click to watch video](./photos/screengrab_thumb.png)](https://drive.google.com/file/d/1ImAiu7K2VxkpaQUhcaErgMaYVHSPb4hN/)
+[![Click to watch video](./photos/screengrab_thumb.png)](https://drive.google.com/file/d/1UaTjSxVsJuFOGLYhqiUmhOF79XG4Lj9O/view)
 
 
 
