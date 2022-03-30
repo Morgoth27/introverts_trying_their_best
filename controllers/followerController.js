@@ -3,10 +3,10 @@ const { User, Thought, Follower } = require('../models');
 module.exports = {
 
 addFollower(req, res) {
-    User.findByIdAndUpdate(
+    User.findOneAndUpdate(
     { _id: req.params.userId },
     { $addToSet: {
-        followers: req.params.followerId
+        followers: req.body.followerId
     }},
     { runValidators: true,
         new: true }
@@ -25,7 +25,7 @@ addFollower(req, res) {
 },
 
   deleteFollower(req, res) {
-    User.findByIdAndDelete(
+    User.findByIdAndUpdate(
     { _id: req.params.userId },
     { $pull: {
         followers: req.params.followerId
