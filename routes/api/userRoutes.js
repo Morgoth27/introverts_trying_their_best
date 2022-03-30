@@ -8,8 +8,13 @@ const {
     deleteUser,
 } = require('../../controllers/userController')
 
+const {
+    createThought
+} = require('../../controllers/thoughtsController');
+
 router.route('/').get(getAllUsers).post(createUser);
 router.route('/:userId').get(getUserById).put(updateUser).delete(deleteUser)
+router.route('/:userId/thoughts/').put(createThought)
 // router.get('/users');
 // router.get('/users/:userId');
 
